@@ -19,7 +19,6 @@ public:
 #ifdef DEBUG
 		cout << "EConstructor:\t" << this << endl;
 #endif // DEBUG
-
 	}
 	~Element()
 	{
@@ -27,7 +26,6 @@ public:
 #ifdef DEBUG
 		cout << "EDestructor:\t" << this << endl;
 #endif // DEBUG
-
 	}
 	friend class ForwardList;
 	friend class Iterator;
@@ -174,7 +172,6 @@ public:
 		while (Head)pop_front();
 		cout << "LDestructor:\t" << this << endl;
 	}
-
 	//				Operators:
 	ForwardList& operator=(const ForwardList& other)
 	{
@@ -208,7 +205,6 @@ public:
 	void push_front(int Data)
 	{
 		Head = new Element(Data, Head);
-
 		size++;
 	}
 	void push_back(int Data)
@@ -253,7 +249,6 @@ public:
 
 		size--;
 	}
-
 	//				Methods:
 	void reverse()
 	{
@@ -272,14 +267,12 @@ public:
 			cout << Temp << tab << Temp->Data << tab << Temp->pNext << endl;
 		cout << "Количество элементов списка:" << size << endl;
 		cout << "Общее количество элементов: " << Element::count << endl;
-		//cout << "Общее количество элементов: " << Head->count << endl;
 	}
 };
 
 ForwardList operator+(const ForwardList& left, const ForwardList& right)
 {
-	ForwardList result = left;	//CopyConstructor
-	//for (Element* Temp = right.get_head(); Temp; Temp = Temp->pNext)result.push_back(Temp->Data);
+	ForwardList result = left;
 	for (ConstIterator it = right.begin(); it != right.end(); ++it)
 	{
 		//*it *= 100;
@@ -376,7 +369,6 @@ void main()
 		//list1.push_back(rand() % 100);
 	}
 	clock_t end = clock();
-	//list1.print();
 	cout << delimiter << endl;
 	cout << "list1 заполнен за " << double(end - start) / CLOCKS_PER_SEC << " секунд" << endl;
 	cout << delimiter << endl;
