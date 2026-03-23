@@ -25,7 +25,6 @@ class List
 		}
 		friend class List;
 	}*Head, * Tail;
-
 	size_t size;
 	class ConstBaseIterator
 	{
