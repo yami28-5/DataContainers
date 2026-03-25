@@ -25,7 +25,7 @@ class Tree
 		}
 	}*Root;
 public:
-
+	void insert();
 };
 
 void main()
